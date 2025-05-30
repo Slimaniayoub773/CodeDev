@@ -1,0 +1,142 @@
+/* Coding Animation */
+.coding-animation-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 350px;
+}
+
+.laptop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.laptop-screen {
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  background: #1e1e1e;
+  border-radius: 10px 10px 0 0;
+  top: 0;
+  left: 10%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.code-window {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.window-controls {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.control.red { background: #ff5f56; }
+.control.yellow { background: #ffbd2e; }
+.control.green { background: #27c93f; }
+
+.code-content {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  color: #d4d4d4;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.laptop-keyboard {
+  position: absolute;
+  width: 90%;
+  height: 15%;
+  background: #e0e0e0;
+  bottom: 0;
+  left: 5%;
+  border-radius: 0 0 10px 10px;
+}
+
+.developer-hands {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.hand {
+  position: absolute;
+  background: #f5f5f5;
+  border-radius: 10px;
+  animation: typingMotion 2s infinite;
+}
+
+.hand.left {
+  width: 30%;
+  height: 10%;
+  bottom: 12%;
+  left: 15%;
+  transform: rotate(10deg);
+  animation-delay: 0.5s;
+}
+
+.hand.right {
+  width: 30%;
+  height: 10%;
+  bottom: 12%;
+  right: 15%;
+  transform: rotate(-10deg);
+}
+
+@keyframes typingMotion {
+  0%, 100% { transform: translateY(0) rotate(10deg); }
+  50% { transform: translateY(-5px) rotate(10deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .coding-animation-container {
+    height: 250px;
+    margin-top: 30px;
+  }
+  
+  .code-content {
+    font-size: 12px;
+    top: 30px;
+    left: 15px;
+    right: 15px;
+  }
+  
+  .hand.left, .hand.right {
+    height: 8%;
+    bottom: 10%;
+  }
+}
